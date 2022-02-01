@@ -1,6 +1,7 @@
 const Pool = require('pg').Pool
 const fs = require('fs')
 
+
 const pool = new Pool({
   user: 'my_user',
   host: 'localhost',
@@ -15,3 +16,6 @@ const seedQuery = fs.readFileSync('./schema.sql', { encoding: 'utf8' })
         console.log('Seeding Completed!')
         pool.end()
     })
+
+   
+    

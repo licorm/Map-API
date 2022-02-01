@@ -35,7 +35,7 @@ return l.name;
   .then(axios.spread(function (...res) {
   var file = fs.createWriteStream('details.js');
   file.on('error', function(err) { /* error handling */ });
-  res.forEach(function(v) { file.write(JSON.stringify(v)); });
+  res.forEach(function(v) { file.write(`${JSON.stringify(v)}, `); });
   
   file.end();
   }));
